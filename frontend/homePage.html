@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html data-theme="coffee" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>imPowered</title>
+    <link href="/css/style.css" rel="stylesheet">
+</head>
+
+<body class="bg-base-100">
+    <!-- Navbar -->
+    <div class="navbar absolute bg-base-300 z-10 border-2 border-black rounded-md">
+        <div class="flex-1">
+            <a href="/" class="btn btn-ghost text-xl">imPowered</a>
+        </div>
+        <div class="flex-none">
+            <ul class="menu menu-horizontal px-1 gap-1">
+                <li>
+                    <a href="/search">Search</a>
+                </li>
+                <li id="auth">
+                    <details>
+                        <summary>Login/Signup</summary>
+                        <ul class="bg-base-300 border-black border-2 rounded-t-none p-2">
+                            <li><a href="/auth/login">Login</a></li>
+                            <li><a href="/auth/signup">SignUp</a></li>
+                        </ul>
+                    </details>
+                </li>
+                <li id="dashboard">
+                    <a href="/dashboard">
+                        <div id="dashboard-content" class="ring-primary ring-offset-base-100 rounded-full ring ring-offset-2">
+                            DK
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- hero -->
+    <div class="hero min-h-screen" style="background-image: url(/img/heroImage.png);">
+        <div class="hero-overlay bg-opacity-60"></div>
+        <div class="hero-content text-neutral-content text-center">
+            <div class="max-w-md">
+                <h1 class="mb-5 text-5xl font-bold">imPowered</h1>
+                <p class="mb-5 text-2xl">
+                    Where Accessibility Meets Possibility And You Meet Your Dreams!
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- about -->
+    <div class="hero min-h-screen">
+        <div class="hero-content flex-col lg:flex-row">
+            <div>
+                <h1 class="text-5xl font-bold">About Us</h1>
+                <p class="py-6">
+                    Our aim at imPowered is to empower and enhance the lives of disabled individuals by providing them with essential information about facilities at public places. We are dedicated to breaking down the barriers that often limit their participation in everyday
+                    activities. Our mission is rooted in inclusivity, and we strive to ensure that no disabled person ever feels excluded or left uninformed when they venture into public spaces. By offering accurate, up-to-date information about accessibility
+                    features, restroom locations, and other pertinent details, we aim to foster independence, reduce stress, and promote greater inclusivity and participation for all. Ultimately, we believe that equal access to information leads to greater
+                    equal access to the world, and we are committed to making this vision a reality for disabled individuals everywhere.
+
+                </p>
+            </div>
+            <img src="/img/homeImage.png" class="max-w-sm rounded-lg z-0  hidden md:block" />
+        </div>
+    </div>
+
+    <!-- services -->
+    <div class="hero min-h-screen">
+        <div class="hero-content flex-col lg:flex-row-reverse">
+            <div>
+                <h1 class="text-5xl font-bold">What Are We About?</h1>
+                <br>
+                <p>Experience a revolutionary approach at helping specially abled ones by providing them with accurate information about facilities they need at public places. Physical disablities should not be boundaries for people in their daily and social
+                    life.
+                </p>
+            </div>
+            <div class="flex flex-col md:flex-row gap-2">
+                <!-- card1 -->
+                <div class="card bg-base-300 shadow-xl">
+                    <div class="card-body">
+                        <h2 class="card-title">Lack of Information</h2>
+                        <p>Many people with disabilities are not aware of all the accessible facilities that are available to them in their communities. This can make it difficult for them to plan their outings and activities.
+                        </p>
+                    </div>
+                </div>
+                <!-- card2 -->
+                <div class="card bg-base-300 shadow-xl">
+                    <div class="card-body">
+                        <h2 class="card-title">Inaccurate information</h2>
+                        <p>There is often a lack of accurate and up-to-date information available about the accessibility of public places. This can lead to lack of information about availability and quality of services.
+                        </p>
+                    </div>
+                </div>
+                <!-- card3 -->
+                <div class="card bg-base-300 shadow-xl">
+                    <div class="card-body">
+                        <h2 class="card-title">Difficulty Planning Trips</h2>
+                        <p>People with disabilities often have to spend a lot of time researching and planning their trips to ensure that the places they visit will be accessible to them.</p>
+
+                    </div>
+                </div>
+                <!-- card4 -->
+                <div class="card bg-base-300 shadow-xl">
+                    <div class="card-body">
+                        <h2 class="card-title">Lack of Confidence at Public Places</h2>
+                        <p>People with disabilities may feel uncomfortable visiting public places because they are unsure of availability of the facilities they need. This can lead to social isolation.</p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- contact us / footer -->
+    <footer class="footer bg-neutral text-neutral-content p-8 flex-row md:flex-col">
+        <div>
+            <svg width="50" height="50" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" class="fill-current">
+        <path
+          d="M22.672 15.226l-2.432.811.841 2.515c.33 1.019-.209 2.127-1.23 2.456-1.15.325-2.148-.321-2.463-1.226l-.84-2.518-5.013 1.677.84 2.517c.391 1.203-.434 2.542-1.831 2.542-.88 0-1.601-.564-1.86-1.314l-.842-2.516-2.431.809c-1.135.328-2.145-.317-2.463-1.229-.329-1.018.211-2.127 1.231-2.456l2.432-.809-1.621-4.823-2.432.808c-1.355.384-2.558-.59-2.558-1.839 0-.817.509-1.582 1.327-1.846l2.433-.809-.842-2.515c-.33-1.02.211-2.129 1.232-2.458 1.02-.329 2.13.209 2.461 1.229l.842 2.515 5.011-1.677-.839-2.517c-.403-1.238.484-2.553 1.843-2.553.819 0 1.585.509 1.85 1.326l.841 2.517 2.431-.81c1.02-.33 2.131.211 2.461 1.229.332 1.018-.21 2.126-1.23 2.456l-2.433.809 1.622 4.823 2.433-.809c1.242-.401 2.557.484 2.557 1.838 0 .819-.51 1.583-1.328 1.847m-8.992-6.428l-5.01 1.675 1.619 4.828 5.011-1.674-1.62-4.829z">
+        </path>
+      </svg>
+            <p>
+                <div class="text-3xl font-bold">
+                    imPowered
+                </div>
+                <div class="text-lg">Institute of Engineering & Technology, Lucknow</div>
+            </p>
+        </div>
+        <div>
+            <div class="footer-title text-2xl">Contact Us</div>
+            <div class="text-lg">
+                E-mail:
+                <div class="inline text-blue-300">kartik3y.ag@gmail.com</div> <br> Contact: +91 9084639683
+            </div>
+        </div>
+    </footer>
+
+</body>
+<script>
+    // checking for token on page load
+    document.addEventListener("DOMContentLoaded", checkToken);
+    async function checkToken() {
+        try {
+            let res = await fetch("/", {
+                method: "POST"
+            })
+            let data = await res.json();
+            if (data.name) {
+                // if data object contains 'name' then only cookie was validate
+                // setting display none hides the object
+                document.getElementById("auth").style.display = 'none';
+                document.getElementById("dashboard").style.display = '';
+                document.getElementById("dashboard-content").innerText = data.name[0].toUpperCase();
+            } else {
+                document.getElementById("dashboard").style.display = 'none';
+                document.getElementById("auth").style.display = '';
+            }
+        } catch (error) {
+            console.log(error);
+        }
+
+    }
+</script>
+
+</html>
