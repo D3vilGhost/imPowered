@@ -1,82 +1,159 @@
 <!DOCTYPE html>
-<html lang="en">
+<html data-theme="coffee" lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Search Page</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>imPowered</title>
+    <link href="/css/style.css" rel="stylesheet">
 </head>
-<body>
-    
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="/home">imPowered</a>
-    </nav>
-    
-<div class="alert alert-warning" role="alert">
-    <b>Note:</b>Current DataSet is limited to only 3 cities <b>Lucknow,Jaipur and Delhi!</b>
-  </div>
-    <div class="container mt-5">
-        <div class="row">
-            <div class="col-md-6 offset-md-3">
-                <div class="input-group mb-3">
-                    <input type="text" class="form-control" id="SearchBar" placeholder="Enter city">
-                    <div class="input-group-append">
-                        <select class="form-control" id="DestinationType">
-                            <option value="">-</option>
-                            <option value="Amusement">Amusement</option>
-                            <option value="School">School</option>
-                            <option value="Hospital">Hospital</option>
-                            <option value="Shop">Shop</option>
-                        </select>
-                    </div>
-                    <div class="input-group-append">
-                        <button class="btn btn-primary" id="SearchBtn">Search</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div id="SearchResults" class="alert"> 
 
+<body class="bg-base-100">
+    <!-- Navbar -->
+    <div class="navbar bg-base-300 flex flex-col md:flex-row z-10 border-2 border-black rounded-md">
+        <div class="flex-1">
+            <a href="/" class="btn btn-ghost text-xl">imPowered</a>
+        </div>
+        <!-- Search form -->
+        <form class="m-5 grid grid-cols-1 md:grid-cols-3 gap-2">
+            <input type="text" placeholder="Location" name="location" class="input input-bordered" required/>
+            <select name="destinationType" class="select select-bordered" required>
+                <option value="-" selected disabled>Destination Type</option>
+                <option value="All">All</option>
+                <option value="Amusement">Amusement</option>
+                <option value="Hospital">Hospital</option>
+                <option value="Shop">Shop</option>
+                <option value="School">School</option>
+                <option value="Other"> Other</option>
+            </select>
+            <div class="form-control">
+                <button class="btn btn-primary">Search</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- search results -->
+    <div class="min-h-screen">
+        <div id="search-result" class="flex gap-4 flex-wrap p-5 justify-center">
         </div>
     </div>
 
-    
-</body>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-<script>
-    let SearchBtn = document.getElementById("SearchBtn");
-    SearchBtn.addEventListener("click", async function (e) {
-        e.preventDefault();
-        document.getElementById("SearchResults").innerHTML="";
-        let DataBase = await axios.post("/search", {});
-        DataBase = DataBase.data;
-        let SearchBarValue=document.getElementById("SearchBar").value.toLowerCase();
-        let DestTypeValue=document.getElementById("DestinationType").value;
-        for (Entity of DataBase) {
-            let cond1=Entity.Address.toLowerCase().includes(SearchBarValue);
-            let cond2=(Entity.DestinationType==DestTypeValue);
-            if(cond1==false || cond2==false){
-                continue;
-            }
-            let data = document.createElement("div");
-            data.className += "alert alert-dark";
-            data.innerHTML = `
-                    <h7>Name: ${Entity.Name}</h7>
-                    <br>
-                    Address: ${Entity.Address}
-                    <br>
-                    <br>
-                    <button "type="button" class="btn btn-primary" onclick={window.location.href="/info/${Entity.Email}"}>Know More</button>`;
 
-            document.getElementById("SearchResults").append(data);
-        }
-        if(document.getElementById("SearchResults").innerHTML==""){
-            document.getElementById("SearchResults").innerHTML="No Results Found!";
-        }
-    });
-</script>
+    <!-- contact us / footer -->
+    <footer class="footer bg-neutral text-neutral-content p-8 flex-row md:flex-col">
+        <div>
+            <svg width="50" height="50" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" class="fill-current">
+        <path
+          d="M22.672 15.226l-2.432.811.841 2.515c.33 1.019-.209 2.127-1.23 2.456-1.15.325-2.148-.321-2.463-1.226l-.84-2.518-5.013 1.677.84 2.517c.391 1.203-.434 2.542-1.831 2.542-.88 0-1.601-.564-1.86-1.314l-.842-2.516-2.431.809c-1.135.328-2.145-.317-2.463-1.229-.329-1.018.211-2.127 1.231-2.456l2.432-.809-1.621-4.823-2.432.808c-1.355.384-2.558-.59-2.558-1.839 0-.817.509-1.582 1.327-1.846l2.433-.809-.842-2.515c-.33-1.02.211-2.129 1.232-2.458 1.02-.329 2.13.209 2.461 1.229l.842 2.515 5.011-1.677-.839-2.517c-.403-1.238.484-2.553 1.843-2.553.819 0 1.585.509 1.85 1.326l.841 2.517 2.431-.81c1.02-.33 2.131.211 2.461 1.229.332 1.018-.21 2.126-1.23 2.456l-2.433.809 1.622 4.823 2.433-.809c1.242-.401 2.557.484 2.557 1.838 0 .819-.51 1.583-1.328 1.847m-8.992-6.428l-5.01 1.675 1.619 4.828 5.011-1.674-1.62-4.829z">
+        </path>
+      </svg>
+            <p>
+                <div class="text-3xl font-bold">
+                    imPowered
+                </div>
+                <div class="text-lg">Institute of Engineering & Technology, Lucknow</div>
+            </p>
+        </div>
+        <div>
+            <div class="footer-title text-2xl">Contact Us</div>
+            <div class="text-lg">
+                E-mail:
+                <div class="inline text-blue-300">kartik3y.ag@gmail.com</div> <br> Contact: +91 9084639683
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- how to use search modal-->
+    <!-- this modal always pops up when page is loaded -->
+    <dialog id="search-info-modal" class="modal">
+        <div class="modal-box bg-base-200">
+            <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2" onclick="closeModal('search-info-modal')">
+                ✕
+            </button>
+            <h3 class="text-lg font-bold">How to Use Our Search Page!</h3>
+            <div class="py-4 text-lg">
+                To use the search page effectively, simply follow these steps:
+                <br>
+                <br> <b>1.</b> Enter your desired location (city, state, or country) in the input field.
+                <br><br> <b>2.</b> Select the destination type from the dropdown menu, and click the search button.
+                <br><br> <b>3.</b> Browse through the results and choose the one that interests you to access detailed information.
+            </div>
+        </div>
+    </dialog>
+
+    <!--Modal for Information of a particular Entity -->
+    <dialog id="info-modal" class="modal">
+        <div class="modal-box bg-base-200">
+            <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2" onclick="closeModal('info-modal')">✕</button>
+            <div class="flex flex-col gap-3">
+                <!--name -->
+                <div>
+                    <div class="font-bold">Name:</div>
+                    <div id="name"></div>
+                </div>
+                <!-- about -->
+                <div>
+                    <div class="font-bold">About:</div>
+                    <div id="about"></div>
+                </div>
+                <!-- Destination Type -->
+                <div>
+                    <div class="font-bold">Destination Type:</div>
+                    <div id="destinationType"></div>
+                </div>
+                <!-- Features Available -->
+                <div>
+                    <div class="font-bold">Features Available:</div>
+                    <div>
+                        <div id="wheelchair"></div>
+                        <div id="lift"></div>
+                        <div id="ramps"></div>
+                        <div id="restrooms"></div>
+                        <div id="helpers"></div>
+                        <div id="announcementSystem"></div>
+                        <div id="automaticDoors"></div>
+                        <div id="accessibleToilets"></div>
+                    </div>
+                </div>
+                <br>
+
+                <!-- Email -->
+                <div>
+                    <div class="font-bold">Email:</div>
+                    <div id="email"></div>
+                </div>
+                <!-- Phone Number -->
+                <div>
+                    <div class="font-bold">Phone Number:</div>
+                    <div id="phoneNumber"></div>
+                </div>
+                <!-- Address -->
+                <div>
+                    <div class="font-bold">Address:</div>
+                    <div id="address"></div>
+                </div>
+
+
+            </div>
+        </div>
+    </dialog>
+
+    <!-- modal for errors-->
+    <dialog id="error-modal" class="modal">
+        <div class="modal-box bg-base-200">
+            <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2" onclick="closeModal('error-modal')">
+                    ✕
+            </button>
+            <h3 class="text-lg font-bold">Error!</h3>
+            <p class="py-4" id="error-modal-content">Press ESC key or click on ✕ button to close</p>
+        </div>
+    </dialog>
+
+    <!-- this div is only for tailwind to generate css for results -->
+    <div class="hidden p-3 border-2 border-neutral-700 rounded-lg w-3/4 hover:scale-105 hover:cursor-pointer hover:bg-base-300 hover:border-primary">
+    </div>
+</body>
+<script src="/js/search.script.js"></script>
 
 </html>

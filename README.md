@@ -1,34 +1,59 @@
-## imPowered
-- imPowered is a Web Based Application Built to assist physically challenged people in their day to day lives which we don't see that they suffer from.Our aim at imPowered is to empower and enhance the lives of disabled individuals by providing them with essential information about facilities at public places. We are dedicated to breaking down the barriers that often limit their participation in everyday activities.
-- Our mission is rooted in inclusivity, and we strive to ensure that no disabled person ever feels excluded or left uninformed when they venture into public spaces. By offering accurate, up-to-date information about accessibility features, restroom locations, and other pertinent details, we aim to foster independence, reduce stress, and promote greater inclusivity and participation for all.
-- Ultimately, we believe that equal access to information leads to greater equal access to the world, and we are committed to making this vision a reality for disabled individuals everywhere.
- 
-## 💻 Technologies used:
-- HTML
-- CSS
-- JS
-- NodeJS
-- MongoDB
+# imPowered
 
-## ▶️How To Use:
-- New companies are welcomed to register through the dedicated registration page.
-- Users utilize the search page by specifying both the city and the type of place they intend to visit.
-- When users search for specific criteria, such as city and type of place, a list of registered locations meeting their requirements is provided as recommendations.
-- After receiving recommendations, users can click on any listed location to access its contact details and obtain further information.
+Welcome to imPowered, a web platform designed to assist disabled individuals by providing essential information on accessibility features at various locations. This second version of imPowered offers a better user interface and faster response times.
 
-## ▶️How To Run Locally:
+## Features
+
+### 1. Search Bar
+- **Functionality**: Users can search by location and destination type.
+- **Purpose**: To get information about the accessibility features available at the places they intend to visit.
+
+### 2. Registration Form
+- **Functionality**: Users can register themselves on the platform.
+- **Purpose**: To create a profile that can be searched by others.
+
+### 3. Login Page
+- **Functionality**: Allows users to log in and access their dashboard.
+- **Dashboard Capabilities**:
+  - **Update Details**: Users can update their personal and accessibility feature details.
+  - **Delete Account**: Users can permanently delete their account if they wish.
+
+## Improvements in Version 2
+- Enhanced user interface for a more intuitive and user-friendly experience.
+- Optimized backend for faster response times and improved performance.
+- OTP-based email verification during registration to ensure genuine registered entities.
+
+## How To Run Locally:
 1. Clone the repository:  
     git clone https://github.com/D3vilGhost/imPowered
 
 2. Install dependencies:
    - npm install
-   - cd ./Backend/
+   - set environmental variables
 
 3. Start the development server: 
-    nodemon App.js
+    - npm run dev
 
+4. Open your web browser and navigate to: localhost:3000.
 
-Frontend Inspired from : https://bootstrapmade.com/demo/Arsha/
+## Environment Variables
 
+Create a `.env` file in the root directory of your project and add the following environment variables:
+
+```env
+MONGODB_URI=your_mongodb_uri
+PORT=3000
+JWT_SECRET=your_jwt_secret
+MAIL_ID=your_email@gmail.com 
+MAIL_PASSWORD=your_appliction_password_for_same_mail
+```
+
+## Contributing
+
+We welcome contributions to improve imPowered! If you have any ideas, suggestions, or bug reports, please open an issue or submit a pull request.
+
+---
+
+Thank you for using imPowered, and we hope it makes a positive impact on your journey!
 
 
