@@ -2,6 +2,7 @@ import express from 'express';
 import path from 'path';
 import dotenv from "dotenv";
 import cookieParser from 'cookie-parser';
+import cors from 'cors';
 
 import connectToMongoDB from "./backend/database/connectToMongoDB.js";
 
@@ -14,6 +15,7 @@ const __dirname = path.resolve();
 const server = express();
 dotenv.config();
 
+server.use(cors());
 server.use(express.json());
 server.use(express.static(path.join(__dirname, "./public")));
 server.use(cookieParser());
