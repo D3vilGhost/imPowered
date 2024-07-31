@@ -15,7 +15,10 @@ const __dirname = path.resolve();
 const server = express();
 dotenv.config();
 
-server.use(cors());
+server.use(cors({
+    origin: ["*"],
+    methods: ["GET", 'POST'],
+}));
 server.use(express.json());
 server.use(express.static(path.join(__dirname, "./public")));
 server.use(cookieParser());
