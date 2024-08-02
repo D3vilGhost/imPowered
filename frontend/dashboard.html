@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html data-theme="coffee" lang="en">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -19,7 +19,9 @@
                 <li id="logout">
                     <a>Logout</a>
                 </li>
-
+                <li>
+                    <img src="/img/moon-stars-fill.svg" id="theme" onclick="changeTheme()" class="h-full">
+                </li>
             </ul>
         </div>
     </div>
@@ -97,36 +99,36 @@
                         </select>
                     </div>
                     <div class="flex gap-2 cursor-pointer">
-                        <input name="wheelchairs" type="checkbox" class="checkbox checkbox-warning" />
+                        <input name="wheelchairs" type="checkbox" class="checkbox checkbox-primary" />
                         <span class="label-text">Wheelchairs</span>
                     </div>
 
                     <div class="flex gap-2 cursor-pointer">
-                        <input name="lift" type="checkbox" class="checkbox checkbox-warning" />
+                        <input name="lift" type="checkbox" class="checkbox checkbox-primary" />
                         <span class="label-text">Lift</span>
                     </div>
                     <div class="flex gap-2 cursor-pointer">
-                        <input name="ramps" type="checkbox" class="checkbox checkbox-warning" />
+                        <input name="ramps" type="checkbox" class="checkbox checkbox-primary" />
                         <span class="label-text">Ramps</span>
                     </div>
                     <div class="flex gap-2 cursor-pointer">
-                        <input name="restrooms" type="checkbox" class="checkbox checkbox-warning" />
+                        <input name="restrooms" type="checkbox" class="checkbox checkbox-primary" />
                         <span class="label-text">Restrooms</span>
                     </div>
                     <div class="flex gap-2 cursor-pointer">
-                        <input name="helpers" type="checkbox" class="checkbox checkbox-warning" />
+                        <input name="helpers" type="checkbox" class="checkbox checkbox-primary" />
                         <span class="label-text">Helpers</span>
                     </div>
                     <div class="flex gap-2 cursor-pointer">
-                        <input name="announcementSystem" type="checkbox" class="checkbox checkbox-warning" />
+                        <input name="announcementSystem" type="checkbox" class="checkbox checkbox-primary" />
                         <span class="label-text">Announcement System</span>
                     </div>
                     <div class="flex gap-2 cursor-pointer">
-                        <input name="automaticDoors" type="checkbox" class="checkbox checkbox-warning" />
+                        <input name="automaticDoors" type="checkbox" class="checkbox checkbox-primary" />
                         <span class="label-text">Automatic Doors</span>
                     </div>
                     <div class="flex gap-2 cursor-pointer">
-                        <input name="accessibleToilets" type="checkbox" class="checkbox checkbox-warning" />
+                        <input name="accessibleToilets" type="checkbox" class="checkbox checkbox-primary" />
                         <span class="label-text">Accessible Toilets</span>
                     </div>
                     <div class="flex cursor-pointer">
@@ -199,5 +201,6 @@
     </dialog>
 </body>
 <script src="/js/dashboard.script.js"></script>
+<script src="/js/theme.js"></script>
 
 </html>

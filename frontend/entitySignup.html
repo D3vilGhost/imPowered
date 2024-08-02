@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html data-theme="coffee" lang="en">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -17,10 +17,17 @@
         <div class="flex-none">
             <ul class="menu menu-horizontal px-1 gap-1">
                 <li>
-                    <a href="/search">Search</a>
+                    <a href="/search">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+                          </svg>
+                    </a>
                 </li>
                 <li>
                     <a href="/auth/login">Login</a>
+                </li>
+                <li>
+                    <img src="/img/moon-stars-fill.svg" id="theme" onclick="changeTheme()" class="h-full">
                 </li>
             </ul>
         </div>
@@ -96,35 +103,35 @@
                         <div class="form-control">
                             <label class="cursor-pointer label">
                                 <span class="label-text">Wheelchairs</span>
-                                <input name="wheelchairs" type="checkbox" class="checkbox checkbox-warning" />
+                                <input name="wheelchairs" type="checkbox" class="checkbox checkbox-primary" />
                             </label>
                             <label class="cursor-pointer label">
                                 <span class="label-text">Lift</span>
-                                <input name="lift" type="checkbox" class="checkbox checkbox-warning" />
+                                <input name="lift" type="checkbox" class="checkbox checkbox-primary" />
                             </label>
                             <label class="cursor-pointer label">
                                 <span class="label-text">Ramps</span>
-                                <input name="ramps" type="checkbox" class="checkbox checkbox-warning" />
+                                <input name="ramps" type="checkbox" class="checkbox checkbox-primary" />
                             </label>
                             <label class="cursor-pointer label">
                                 <span class="label-text">Restrooms</span>
-                                <input name="restrooms" type="checkbox" class="checkbox checkbox-warning" />
+                                <input name="restrooms" type="checkbox" class="checkbox checkbox-primary" />
                             </label>
                             <label class="cursor-pointer label">
                                 <span class="label-text">Helpers</span>
-                                <input name="helpers" type="checkbox" class="checkbox checkbox-warning" />
+                                <input name="helpers" type="checkbox" class="checkbox checkbox-primary" />
                             </label>
                             <label class="cursor-pointer label">
                                 <span class="label-text">Announcement System</span>
-                                <input name="announcementSystem" type="checkbox" class="checkbox checkbox-warning" />
+                                <input name="announcementSystem" type="checkbox" class="checkbox checkbox-primary" />
                             </label>
                             <label class="cursor-pointer label">
                                 <span class="label-text">Automatic Doors</span>
-                                <input name="automaticDoors" type="checkbox" class="checkbox checkbox-warning" />
+                                <input name="automaticDoors" type="checkbox" class="checkbox checkbox-primary" />
                             </label>
                             <label class="cursor-pointer label">
                                 <span class="label-text">Accessible Toilets</span>
-                                <input name="accessibleToilets" type="checkbox" class="checkbox checkbox-warning" />
+                                <input name="accessibleToilets" type="checkbox" class="checkbox checkbox-primary" />
                             </label>
                         </div>
 
@@ -195,5 +202,7 @@
 
 </body>
 <script src="/js/signup.script.js"></script>
+
+<script src="/js/theme.js"></script>
 
 </html>
