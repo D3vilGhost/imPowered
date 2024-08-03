@@ -10,7 +10,7 @@ function showErrorModal(message) {
 
 function showInfoModal(data) {
     let features = {
-        wheelChair: 'Wheel Chairs',
+        wheelchair: 'Wheel Chairs',
         lift: 'Lift',
         ramps: 'Ramps',
         restrooms: 'Restrooms',
